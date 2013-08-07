@@ -9,7 +9,6 @@ class CModel {
     protected $clas = '';
     protected $headers = array('');
     protected $data = array();
-    protected $localization = false;
     protected $localeFunc;
     protected $validation = array();
     protected $headerLength = array();
@@ -21,11 +20,6 @@ class CModel {
             function($name) {
                 return ucfirst($name);
             };
-    }
-    
-    public function locale($val) {
-        $this->localization = $val;
-        return $this;
     }
     
     public function localeCallback($func) {
