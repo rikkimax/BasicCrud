@@ -18,12 +18,11 @@ $test->value = 'aValue';
 
 $cTest = new \CrudUI\CModel('\Test');
 //$cTest->removeHeader('name')->addHeader('name');
-$cTest->locale(true);
 $cTest->validate('name', '.*')->validate('value', '[a-zA-Z0-9]*');
-$cTest->headerLength('name', 5);
+$cTest->headerLength('name', 3)->headerType('name', \CrudUI\TypeText);
 $cTest->data($test);
 
-var_dump($cTest->checkAllData());
-
+$cTest->checkAllData();
+echo $cTest->generate();
 
 ?>
